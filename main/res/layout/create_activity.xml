@@ -1,46 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="-120dp"
-        android:text="오늘 나의 코드"
-        android:textColor="#FFB9B9"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:text="오늘 나의 코드"
+            android:textColor="#FFB9B9"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
-    <EditText
-        android:layout_width="360dp"
-        android:layout_height="400dp"
-        android:layout_marginLeft="-127dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/edittext_stroke"
-        android:hint="오늘의 코드를 입력해보세요." />
+        <EditText
+            android:layout_width="360dp"
+            android:layout_height="400dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_stroke"
+            android:hint="오늘의 코드를 입력해보세요."
+            android:gravity="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="-356dp"
-        android:layout_marginTop="350dp"
-        android:text="어려웠던 부분"
-        android:textColor="#FFB9B9"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="어려웠던 부분"
+            android:textColor="#FFB9B9"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:layout_width="360dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="-127dp"
-        android:layout_marginTop="445dp"
-        android:background="@drawable/edittext_stroke"
-        android:hint="오늘의 코드를 입력해보세요." />
+        <EditText
+            android:layout_width="360dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_stroke"
+            android:hint="어려웠던 부분, 힘들었던 부분을 적어보세요."
+            android:gravity="center" />
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="앞으로의 계획"
+            android:textColor="#FFB9B9"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="360dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/edittext_stroke"
+            android:hint="앞으로 할 계획을 적어보세요."
+            android:gravity="center" />
+
+    </LinearLayout>
 </ScrollView>
