@@ -22,6 +22,7 @@
 
 
         <EditText
+            android:id="@+id/today_code"
             android:layout_width="360dp"
             android:layout_height="400dp"
             android:layout_marginLeft="19dp"
@@ -41,6 +42,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/diffc_text"
             android:layout_width="360dp"
             android:layout_height="120dp"
             android:layout_marginLeft="19dp"
@@ -61,6 +63,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/plan_text"
             android:layout_width="360dp"
             android:layout_height="120dp"
             android:layout_marginLeft="19dp"
