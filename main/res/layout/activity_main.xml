@@ -16,6 +16,7 @@
         android:textSize="20dp" />
 
     <Button
+        android:id="@+id/create_code_btn"
         android:text="코드 생성하기"
         android:textStyle="bold"
         android:backgroundTint="#FFC5C5"
@@ -26,6 +27,7 @@
         android:layout_marginRight="50dp" />
 
     <Button
+        android:id="@+id/delete_code_btn"
         android:text="코드 삭제하기"
         android:textStyle="bold"
         android:backgroundTint="#FFC5C5"
