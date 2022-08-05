@@ -2,7 +2,6 @@ package com.example.mainactivity
 
 
 import android.content.Context
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class CodeCreateActivity(val dataList: List<Journals>)
@@ -35,6 +33,10 @@ class CodeCreateActivity(val dataList: List<Journals>)
                 val newPlan = planText.text.toString()
 
                 Journals.saveToPreference(pref, newToday, newDiffic, newPlan)
+
+                journal.todayText = newToday
+                journal.diffcText = newDiffic
+                journal.planText = newPlan
             }
         }
 
@@ -48,8 +50,6 @@ class CodeCreateActivity(val dataList: List<Journals>)
         }
 
     }
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): journalsItemViewHolder {
         Log.d("mytag", "onCreateViewHolder")
@@ -68,12 +68,8 @@ class CodeCreateActivity(val dataList: List<Journals>)
         return dataList.size
     }
 
+
+
 }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.create_activity)
-//
-//        //상단 제목 표시줄 숨기기
-//        supportActionBar?.hide()
-//    }
+

@@ -1,5 +1,6 @@
 package com.example.mainactivity
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -7,18 +8,14 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 
-data class Journals(var idx : Int, var todayText : String, var diffcText : String, var planText : String){
+data class Journals(var todayText: String, var diffcText: String, var planText: String){
     companion object {
-        fun saveToPreference(pref: SharedPreferences,
-                             idx: Int,
-                             todayText: String,
-                             diffcText : String,
-                             planText : String) : Journals {
+        fun saveToPreference(
+            pref: SharedPreferences,
+            todayText: String,
+            diffcText: String,
+            planText: String) : Journals {
             val editor = pref.edit()
-
-            editor.putString("${idx}.today", todayText)
-            editor.putString("${idx}.diffcText", diffcText)
-            editor.putString("${idx}.planText", planText)
 
             editor.putString("todayText",todayText)
             editor.putString("diffcText",diffcText)
@@ -26,7 +23,7 @@ data class Journals(var idx : Int, var todayText : String, var diffcText : Strin
 
             editor.apply()
 
-            return Journals(idx, todayText, diffcText, planText)
+            return Journals(todayText, diffcText, planText)
         }
 
         fun getJournalsFromPreference(pref: SharedPreferences) : MutableList<Journals> {
@@ -37,7 +34,7 @@ data class Journals(var idx : Int, var todayText : String, var diffcText : Strin
                 val diffc = pref.getString("${i}.diffc","")!!
                 val plan = pref.getString("${i}.plan","")!!
                 if(today.isNotBlank()) {
-                    journals.add(Journals(i, today, diffc, plan))
+                    journals.add(Journals(today, diffc, plan))
                 }
             }
             return journals
@@ -46,6 +43,10 @@ data class Journals(var idx : Int, var todayText : String, var diffcText : Strin
 }
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var journals: MutableList<Journals>
+    private lateinit var pref: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,6 +54,8 @@ class MainActivity : AppCompatActivity() {
         //상단 제목 표시줄 숨기기
         supportActionBar?.hide()
 
+        pref = getSharedPreferences("journals", Context.MODE_PRIVATE)
+        journals = Journals.getJournalsFromPreference(pref)
 
         val createBtn = findViewById<Button>(R.id.create_code_btn)
         createBtn.setOnClickListener{
