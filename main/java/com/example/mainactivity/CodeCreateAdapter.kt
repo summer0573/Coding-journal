@@ -68,9 +68,6 @@ class CodeCreateAdapter(val dataList: List<Journals>)
     override fun getItemCount(): Int {
         return dataList.size
     }
-
-
-
 }
 
 
