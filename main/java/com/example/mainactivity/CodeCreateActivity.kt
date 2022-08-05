@@ -1,13 +1,19 @@
 package com.example.mainactivity
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 
 class CodeCreateActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.create_activity)
+        setContentView(R.layout.activity_code_create)
+
+        val writeBtn = findViewById<Button>(R.id.write_btn)
+        writeBtn.setOnClickListener{
+            Log.d("mytag", "작성하기")
+        }
     }
 }

@@ -19,14 +19,15 @@ class CodingJournalsMainActivity : AppCompatActivity() {
 
         val createBtn = findViewById<Button>(R.id.create_code_btn)
         createBtn.setOnClickListener{
-            Log.d("mytag", "작성하기 버튼")
+            Log.d("mytag", "생성하기")
             val intent = Intent(this, CodeCreateActivity::class.java)
             startActivity(intent)
         }
 
         val deleteBtn = findViewById<Button>(R.id.delete_code_btn)
-        Log.d("mytag", "삭제하기 버튼")
+
         deleteBtn.setOnClickListener{
+            Log.d("mytag", "삭제하기")
             val intent = Intent(this, CodeDeleteActivity::class.java)
             startActivity(intent)
         }
