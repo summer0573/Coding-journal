@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         val createBtn = findViewById<Button>(R.id.create_code_btn)
         createBtn.setOnClickListener{
             Log.d("mytag", "작성하기 버튼")
-            val intent = Intent(this, CodeCreateActivity::class.java)
+            val intent = Intent(this, CodeCreateAdapter::class.java)
             startActivity(intent)
         }
 

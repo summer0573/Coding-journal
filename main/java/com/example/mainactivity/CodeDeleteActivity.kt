@@ -8,7 +8,8 @@ class CodeDeleteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.delete_activity)
 
-
+        //상단 제목 표시줄 숨기기
+        supportActionBar?.hide()
 
     }
 }
